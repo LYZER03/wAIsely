@@ -1,0 +1,33 @@
+"use client";
+
+import React from 'react'
+import { Card, CardContent, CardHeader, CardTitle } from '../ui/card'
+import { VideoIcon } from 'lucide-react'
+import { useRouter } from 'next/navigation'
+
+type Props = {}
+
+const VideoCard = (props: Props) => {
+    const router = useRouter();
+    return (
+        <Card 
+            className='hover:cursor-pointer hover:opacity-75'
+            onClick={() =>{
+                router.push('');
+            }}
+            >
+            <CardHeader className= 'flex flex-row items-center justify-between pb-2 space-y-0'>
+                <CardTitle className='text-2xl font-bold'> Make video with me!</CardTitle>
+                <VideoIcon color="red" size={28} strokeWidth={2.5}/>
+            </CardHeader>
+            <CardContent>
+                <p className='text-2sm text-muted-foreground'>
+                    COMMING SOON
+                </p>
+            </CardContent>
+        </Card>
+
+    )
+}
+
+export default VideoCard
