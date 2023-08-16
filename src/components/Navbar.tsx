@@ -1,11 +1,8 @@
 import { authOptions, getAuthSession } from '@/lib/nextauth';
-import Link from "next/link"
 import React from 'react'
 import SignInButton from './SignInButton';
 import UserAccountNav from './UserAccountNav';
 import { ThemeToggle } from './ThemeToggle';
-import { Menu } from "lucide-react";
-import { Button } from './ui/button';
 import MobileSidebar from '@/components/mobile-sidebar';
 
 const Navbar = async() => {
