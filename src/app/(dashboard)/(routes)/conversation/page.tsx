@@ -22,12 +22,7 @@ import UserAvatar from '@/components/UserAvatar';
 import { BotAvatar } from '@/components/BotAvatar';
 import { User } from 'next-auth'
 
-
-type Props = {
-    user: Pick <User, 'image'>
-}
-
-const ConversationPage = ({ user }: Props) => {
+const ConversationPage = () => {
 
     const router = useRouter();
     const [messages, setMessages] = useState<ChatCompletionRequestMessage[]>([]);
@@ -120,7 +115,6 @@ const ConversationPage = ({ user }: Props) => {
                                 key={message.content}
                                 className={cn('p-8 w-full flex itms-start gap-x-8 rounded-lg', message.role === "user" ? "bg-white border border-black/10" : "bg-muted")}
                             >
-                                {message.role === "user" ? <UserAvatar user={ user }/> : <BotAvatar/>}
                                 <p className='text-sm'>
                                     {message.content}
                                 </p>
