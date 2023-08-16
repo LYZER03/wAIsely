@@ -1,19 +1,12 @@
-import React from 'react';;
+"use client";
 
-import { Metadata } from "next";
+import React from 'react';;
 import Link from "next/link";
 
 import { Button } from "@/components/ui/button";
 import Image from 'next/image';
 
 import { Typewriter } from 'react-simple-typewriter';
-
-
-
-export const metadata: Metadata = {
-  title: "Authentication",
-  description: "Authentication forms built using the components.",
-}
 
 export default function SignInPage() {
   return (
@@ -32,7 +25,18 @@ export default function SignInPage() {
           </nav>
           <div className='flex-col text-[32px] leading-[1.2] md:flex md:text-[40px]'>
             <h1>
-              Life is simple
+              {'<'}Life is simple{' '}
+              <span style={{ color: 'red', fontWeight: 'bold' }}>
+                <Typewriter
+                  words={['Eat/>', 'Sleep ( ◡́.◡̀)/>', 'Code/>', 'Learn ✍(◔◡◔)/>','Stylish (>‿◠)✌/>','Playful (^◡^ )/>', 'Repeat!/>']}
+                  loop={Infinity}
+                  cursor
+                  cursorStyle='_'
+                  typeSpeed={70}
+                  deleteSpeed={50}
+                  delaySpeed={1000}
+                />
+              </span>
             </h1>
           </div>
         </div>
