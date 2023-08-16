@@ -1,21 +1,14 @@
-"use client";
-import React from 'react';
+import React from 'react';;
 
-import { Metadata } from "next"
-import Link from "next/link"
+import { Metadata } from "next";
+import Link from "next/link";
 
-import { cn } from "@/lib/utils"
-import { Button, buttonVariants } from "@/components/ui/button"
-import SignIn from '@/components/Auth/SignIn';
+import { Button } from "@/components/ui/button";
 import Image from 'next/image';
 
-import { Montserrat } from "next/font/google";
-import { Typewriter } from 'react-simple-typewriter'
+import { Typewriter } from 'react-simple-typewriter';
 
-const font = Montserrat({
-  weight: "600",
-  subsets: ["latin"]
-})
+
 
 export const metadata: Metadata = {
   title: "Authentication",
@@ -39,18 +32,7 @@ export default function SignInPage() {
           </nav>
           <div className='flex-col text-[32px] leading-[1.2] md:flex md:text-[40px]'>
             <h1>
-              {'<'}Life is simple{' '}
-              <span style={{ color: 'red', fontWeight: 'bold' }}>
-                <Typewriter
-                  words={['Eat/>', 'Sleep/>', 'Code/>', 'Learn/>','Stylish/>','Playful/>', 'Repeat!/>']}
-                  loop={Infinity}
-                  cursor
-                  cursorStyle='_'
-                  typeSpeed={70}
-                  deleteSpeed={50}
-                  delaySpeed={1000}
-                />
-              </span>
+              Life is simple
             </h1>
           </div>
         </div>
