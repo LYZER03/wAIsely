@@ -20,7 +20,7 @@ import { toast } from 'react-hot-toast';
 import { useProModal } from '../../../../../hook/use-pro-modal';
 
 const MusicPage = () => {
-    const proModal = useProModal
+    const proModal = useProModal();
     const router = useRouter();
     const [music, setMusic] = useState<string>();
 
