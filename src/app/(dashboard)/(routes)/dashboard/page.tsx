@@ -4,13 +4,10 @@ import ConversationCard from '@/components/dashboard/ConversationCard';
 import ImageGenCard from '@/components/dashboard/ImageGenCard';
 import MusicCard from '@/components/dashboard/MusicCard';
 import VideoCard from '@/components/dashboard/VideoCard';
-import { Button } from '@/components/ui/button'
-import { prisma } from '@/lib/db'
 
 import { getAuthSession } from '@/lib/nextauth';
 import  { redirect } from 'next/navigation'
 import React from 'react';
-
 
 
 type Props ={}

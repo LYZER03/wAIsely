@@ -24,7 +24,6 @@ const ImageGenCard = (props: Props) => {
                 <p className='text-2sm text-muted-foreground'>
                     Produce high-quality images using the most intelligent AI!
                 </p>
-                <p className='flex items-center space-x-1 font-bold text-red-500'>Under maintenance</p>
             </CardContent>
         </Card>
 

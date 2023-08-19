@@ -13,7 +13,7 @@ const MusicCard = (props: Props) => {
         <Card 
             className='hover:cursor-pointer hover:opacity-75'
             onClick={() =>{
-                router.push('');
+                router.push('/music');
             }}
             >
             <CardHeader className= 'flex flex-row items-center justify-between pb-2 space-y-0'>
@@ -22,7 +22,7 @@ const MusicCard = (props: Props) => {
             </CardHeader>
             <CardContent>
                 <p className='text-2sm text-muted-foreground'>
-                    COMING SOON
+                    Produce your sound content with AI
                 </p>
             </CardContent>
         </Card>
