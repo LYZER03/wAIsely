@@ -1,7 +1,8 @@
 "use client";
+
 import axios from 'axios';
 import * as z from "zod";
-import { Music } from "lucide-react";
+import { Download, ImageIcon } from "lucide-react";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod"
 
@@ -15,13 +16,16 @@ import { useRouter } from 'next/navigation';
 import { useState } from 'react';
 import Empty from '@/components/empty';
 import { Loader } from '@/components/loader';
-import { useProModal } from "@/hook/use-pro-modal";
+import Image from 'next/image';
+import { Card, CardFooter } from '@/components/ui/card';
+import { useProModal } from '../../../../../hook/use-pro-modal';
 import { toast } from 'react-hot-toast';
 
-const MusicPage = () => {
+const VideoPage = () => {
+
     const proModal = useProModal();
     const router = useRouter();
-    const [music, setMusic] = useState<string>();
+    const [image, setImage] = useState<string>();
 
     const form = useForm<z.infer<typeof formSchema>>({
         resolver: zodResolver(formSchema),
@@ -34,9 +38,9 @@ const MusicPage = () => {
 
     const onSubmit = async (values: z.infer<typeof formSchema>) => {
         try{
-            setMusic(undefined);
-            const response = await axios.post("/api/music", values);
-            setMusic(response.data.audio);
+            setImage(undefined);
+            const response = await axios.post("/api/image", values);
+            setImage(response.data[0]);
             form.reset();
         } catch(error: any) {
             if(error?.response?.status === 403){
@@ -51,11 +55,11 @@ const MusicPage = () => {
     return (
         <div className='p-6 mx-auto max-w-7xl py-32'> 
             <Heading
-                title="Music Generation"
-                description="turn your prompt into music"
-                icon={Music}
-                iconColor="text-emerald-500"
-                bgColor="bg-emerald-500/10"
+                title="Image Generation"
+                description="turn your prompt into image"
+                icon={ImageIcon}
+                iconColor="text-pink-700"
+                bgColor="bg-pink-700/10"
             />
             <div className="px-4 lg:px-8">
                 <div>
@@ -83,7 +87,7 @@ const MusicPage = () => {
                                             <Input
                                                 className="border-0 outline-none focus-visible:ring-0 focus-visible:ring-transparent"
                                                 disabled={isLoading}
-                                                placeholder="Piano solo" {...field}
+                                                placeholder="A studio portrait of an iguana wearing a hat" {...field}
                               
                                             />
                                         </FormControl>
@@ -102,13 +106,30 @@ const MusicPage = () => {
                             <Loader/>
                         </div>
                     )}
-                    {!music && !isLoading && (
-                        <Empty label="No music started."/>
+                    {!image && !isLoading && (
+                        <Empty label="No image generated."/>
                     )}
-                    { music && (
-                        <audio controls className='w-full mt-8'>
-                            <source src={music}/>
-                        </audio>
+                    { image && (
+                        <Card key={image} className='rounded-lg overflow-hidden'>
+                            <div className='relative aspect-square'>
+                                <Image 
+                                    alt='Image' 
+                                    fill 
+                                    src = {image} 
+                                />
+                            </div>
+                            <CardFooter className='p-2'>
+                                <Button 
+                                    onClick={()=> window.open(image)}
+                                    variant="secondary" 
+                                    className='w-full'
+                                >
+                                    <Download className='h-4 w-4 mr-2'/>
+                                    Download
+                                </Button>
+                            </CardFooter>
+                        </Card>
+
                     )}
                 </div>
             </div>
@@ -116,4 +137,4 @@ const MusicPage = () => {
     );
 };
 
-export default MusicPage;
+export default VideoPage;
