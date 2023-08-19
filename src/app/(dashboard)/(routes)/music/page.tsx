@@ -15,11 +15,12 @@ import { useRouter } from 'next/navigation';
 import { useState } from 'react';
 import Empty from '@/components/empty';
 import { Loader } from '@/components/loader';
-import { useProModal } from "@/hook/use-pro-modal";
+
 import { toast } from 'react-hot-toast';
+import { useProModal } from '../../../../../hook/use-pro-modal';
 
 const MusicPage = () => {
-    const proModal = useProModal();
+    const proModal = useProModal
     const router = useRouter();
     const [music, setMusic] = useState<string>();
 
