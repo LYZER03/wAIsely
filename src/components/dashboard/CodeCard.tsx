@@ -22,7 +22,7 @@ const CodeCard = (props: Props) => {
             </CardHeader>
             <CardContent>
                 <p className='text-2sm text-muted-foreground'>
-                    COMMING SOON
+                    unavailable
                 </p>
             </CardContent>
         </Card>

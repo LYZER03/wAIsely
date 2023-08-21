@@ -18,9 +18,7 @@ import { ChatCompletionRequestMessage } from 'openai';
 import Empty from '@/components/empty';
 import { Loader } from '@/components/loader';
 import { cn } from '@/lib/utils';
-import UserAvatar from '@/components/UserAvatar';
-import { BotAvatar } from '@/components/BotAvatar';
-import { User } from 'next-auth'
+
 
 const ConversationPage = () => {
 

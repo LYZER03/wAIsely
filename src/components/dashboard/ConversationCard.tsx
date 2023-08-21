@@ -24,7 +24,7 @@ const ConversationCard = (props: Props) => {
                 <p className='text-2sm text-muted-foreground'>
                     Converse with the smartest AI!
                 </p>
-                <p className='flex items-center space-x-1 font-bold text-red-500'>Under maintenance</p>
+                <p> unavailable </p>
             </CardContent>
         </Card>
 
