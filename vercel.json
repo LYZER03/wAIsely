@@ -11,6 +11,10 @@
       "app/api/music/route.ts": {
         "memory": 3000,
         "maxDuration": 60
+      },
+      "app/api/conversation/route.ts": {
+        "memory": 3000,
+        "maxDuration": 60
       }
     }
   }
